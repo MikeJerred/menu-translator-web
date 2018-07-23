@@ -2,9 +2,16 @@
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-    production: false
-};
+import { Injectable } from '@angular/core';
+import { Environment } from '@menu-translator/shared/environments/environment';
+
+@Injectable()
+export class WebEnvironment extends Environment {
+    production = false;
+    googleCloudVisionAPIKey = '';
+}
+
+export const production = false;
 
 /*
  * In development mode, to ignore zone related error stack frames such as
